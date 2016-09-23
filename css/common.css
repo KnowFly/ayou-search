@@ -1,0 +1,58 @@
+@charset "utf-8";
+/**
+ * Created by yangjing on 2016/9/23.
+*/
+
+.fd-container {
+    box-sizing: border-box;
+    min-height: 486px;
+    min-width: 890px;
+}
+.fd-header {
+    box-sizing: border-box;
+    padding-left: 17px;
+    margin-top: 17px;
+    width: 100%;
+    font: 18px/normal "microsoft yahei";
+    color: #000;
+}
+.fd-main {
+    box-sizing: border-box;
+    padding: 12px 1.9% 0;
+    width: 100%;
+}
+.fd-main:after {
+    display: block;
+    content: '';
+    visibility: hidden;
+    clear: both;
+}
+.fd-main >div {
+    float: left;
+    box-sizing: border-box;
+    width: 32.46%;
+    height: 364px;
+}
+.fd-item-01 {
+}
+.fd-item-02 {
+    box-sizing: border-box;
+    margin-left: 1.3%;
+    border: 1px solid #ebebeb;
+}
+.fd-item-02 > h4 {
+    box-sizing: border-box;
+    height: 61px;
+    border-bottom: 1px solid #d8dbdc;
+    background-color: #f7f7f7;
+}
+.fd-item-03 {
+    margin-left: 1.3%;
+}
+.fd-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 57px;
+    background-color: #f7f7f7;
+}
