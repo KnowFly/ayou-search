@@ -7,178 +7,77 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/common.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/jquery.treeview.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/scrollbar.css" media="all"/>
 </head>
 <body>
     <div class="fd-container">
         <div class="fd-header">立案案由</div>
         <div class="fd-main">
             <div class="fd-item-01">
-                <div class="fd-search"><input type="text"></div>
-                <div id="menuTree">
+                <div class="fd-search"><input type="text" placeholder="请输入案由名称" size="14"></div>
+                <div class="fd-scroll-wrapp fd-item-01-con">
+                    <div class="fd-scroll-content" id="scroll01">
+                        <div id="ayTree">
 
+                        </div>
+                    </div>
+                    <div class="fd-scroll-track"></div>
                 </div>
-
             </div>
             <div class="fd-item-02">
                 <h4>
-                    <span>已经选择了6个罪名</span>
-                    <a>清空</a>
+                    <div><span>已经选择了6个罪名</span><a class="fd-a-delete">清空</a></div>
                     <p>拖拽可变更案由顺序</p>
                 </h4>
-                <div>
-                    <div>
-                        <ul>
-                            <li><span>背叛国家罪</span><a></a></li>
-                            <li><span>分裂国家罪</span><a></a></li>
-                            <li><span>放火罪</span><a></a></li>
-                            <li><span>失火罪</span><a></a></li>
-                            <li><span>资敌罪</span><a></a></li>
-                            <li><span>为境外窃取、刺探、收买国家秘密</span><a></a></li>
+                <div class="fd-ul-container fd-scroll-wrapp">
+                    <div class="fd-scroll-content" id="scroll02">
+                        <ul class="fd-data-list">
+                            <li><a class="fd-name">背叛国家罪</a><a class="fd-remove"></a></li>
+                            <li><a class="fd-name">分裂国家罪</a><a class="fd-remove"></a></li>
+                            <li><a class="fd-name">放火罪</a><a class="fd-remove"></a></li>
+                            <li><a class="fd-name">失火罪</a><a class="fd-remove"></a></li>
+                            <li><a class="fd-name">资敌罪</a><a class="fd-remove"></a></li>
+                            <li><a class="fd-name">为境外窃取、刺探、收买国家秘密hahah</a><a class="fd-remove"></a></li>
+
                         </ul>
                     </div>
+                    <div class="fd-scroll-track"></div>
                 </div>
             </div>
             <div class="fd-item-03">
-                <div>当前罪名</div>
+                <div class="fd-title"><span><a>刺探</a><a>情报</a></span>当前罪名</div>
+                <div class="fd-con-container">
+                    <ul class="fd-ul-data">
+                        <li>
+                            <h6>第一节</h6>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR1"><label for="checkboxR1" class="fd-checkbox-label"></label><label class="js-label">窃取</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR2"><label for="checkboxR2" class="fd-checkbox-label"></label><label class="js-label">刺探</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR3"><label for="checkboxR3" class="fd-checkbox-label"></label><label class="js-label">收买</label></span>
+                        </li>
+                        <li>
+                            <h6>第二节</h6>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR4"><label for="checkboxR4" class="fd-checkbox-label"></label><label class="js-label">窃取</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR5"><label for="checkboxR5" class="fd-checkbox-label"></label><label class="js-label">刺探</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR6"><label for="checkboxR6" class="fd-checkbox-label"></label><label class="js-label">收买</label></span>
+                        </li>
+                        <li>
+                            <h6>第三节</h6>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR7"><label for="checkboxR7" class="fd-checkbox-label"></label><label class="js-label">窃取</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR8"><label for="checkboxR8" class="fd-checkbox-label"></label><label class="js-label">刺探</label></span>
+                            <span class="fd-checkbox-wrapper"><input type="checkbox" id="checkboxR9"><label for="checkboxR9" class="fd-checkbox-label"></label><label class="js-label">收买</label></span>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </div>
-        <!--<ul id="navigation">
-            <li>
-                <a>危害公共安全罪</a>
-                <ul>
-                    <li>
-                        <a>放火罪</a>
-                        <ul>
-                            <li>
-                                <a>决水罪</a>
-                                <ul>
-                                    <li><a>爆炸罪</a></li>
-                                    <li><a>投毒罪</a></li>
-                                    <li>
-                                        <a>失火罪</a>
-                                        <ul>
-                                            <li>
-                                                <a>过失爆炸罪</a>
-                                                <ul>
-                                                    <li><a>过失投毒罪</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a>破坏交通工具罪</a>
-                                        <ul>
-                                            <li>
-                                                <a>破坏交通工具罪</a>
-                                                <ul>
-                                                    <li>资敌罪</li>
-                                                </ul>
-                                            </li>
-                                            <li><a>爆炸罪</a></li>
-                                            <li>
-                                                <a>破坏交通设施罪</a>
-                                                <ul>
-                                                    <li><a>破坏罪</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>-->
         <div class="fd-bottom"></div>
     </div>
 </body>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.treeview.edit.js"></script>
 <script src="js/jquery.treeview.js" type="text/javascript"></script>
-<script>
-    $(function () {
-        var json = [
-            {
-                "name": "危害公共安全罪",
-                "list": [
-                    {
-                        "name": "决水罪",
-                        "url": "#a1"
-                    },
-                    {
-                        "name": "放火罪",
-                        "list": [
-                            {
-                                "name": "爆炸罪",
-                                "url": "#a11"
-                            },
-                            {
-                                "name": "投毒罪",
-                                "url":""
-                            },
-                            {
-                                "name": "过失投毒罪",
-                                "url": "#a13"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "*b",
-                "list": [
-                    {
-                        "name": "**b",
-                        "url": "#b1"
-                    },
-                    {
-                        "name": "**bb",
-                        "list": [
-                            {
-                                "name": "****b",
-                                "url": "#b111"
-                            },
-                            {
-                                "name": "****bb",
-                                "url": "#b112"
-                            }
-                        ]
-                    }
-                ]
-            }
+<script type="text/javascript" src="js/index.js"  charset="UTF-8"></script>
+<script type="text/javascript" src="js/jquery-ui.js"  charset="UTF-8"></script>
+<script type="text/javascript" src="js/scrollbar.js"  charset="UTF-8"></script>
 
-        ]
-
-        var str = "<ul>";
-        var forTree = function(o){
-
-            for(var i=0;i<o.length;i++){
-                var urlstr;
-                try{
-                    if(typeof o[i]["url"] == "undefined"){
-                        urlstr = "<li><a>"+ o[i]["name"] +"</a><ul>";
-                    }else{
-                        urlstr = "<li><a href="+ o[i]["url"] +">"+ o[i]["name"] +"</a><ul>";
-                    }
-                    str += urlstr;
-                    if(o[i]["list"] != null){
-                        forTree(o[i]["list"]);
-                    }
-                    str += "</ul></li></ul>";
-                }catch(e){}
-            }
-            return str;
-        }
-
-        document.getElementById("menuTree").innerHTML = forTree(json);
-        $("#menuTree > ul").addClass("navigation")
-
-        $(".navigation").treeview({
-            persist: "location",
-            collapsed: true,
-            unique: true
-        });
-    });
-</script>
 </html>

@@ -2,7 +2,13 @@
 /**
  * Created by yangjing on 2016/9/23.
 */
-
+/*滚动条相关样式*/
+.fd-scroll-wrapp {
+    position: relative;
+    width: 100%;
+    height: 88.9%;
+    overflow: hidden;
+}
 .fd-container {
     box-sizing: border-box;
     min-height: 486px;
@@ -33,8 +39,30 @@
     width: 32.46%;
     height: 364px;
 }
-.fd-item-01 {
+/*案由树相关样式*/
+.fd-item-01-con {
+    margin-top: 11px;
 }
+.fd-search {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    background: url("../images/search-icon.png") no-repeat 10px center;
+    overflow: hidden;
+}
+.fd-search >input {
+    box-sizing: border-box;
+    margin-left: 34px;
+    width: 98%;
+    height: 100%;
+    border: 0;
+    color: #999;
+    font-family: "microsoft yahei";
+}
+/*罪名模块的样式*/
 .fd-item-02 {
     box-sizing: border-box;
     margin-left: 1.3%;
@@ -42,12 +70,136 @@
 }
 .fd-item-02 > h4 {
     box-sizing: border-box;
+    padding: 5px 19px 10px;
     height: 61px;
     border-bottom: 1px solid #d8dbdc;
     background-color: #f7f7f7;
+    color: #000;
+    font: 16px/24px "microsoft yahei";
 }
+.fd-item-02 > h4 p {
+    font-size: 14px;
+    color: #999;
+}
+.fd-item-02 >h4>div:after {
+    display: block;
+    content: '';
+    visibility: hidden;
+    clear: both;
+}
+.fd-a-delete {
+    float: right;
+    padding-left: 14px;
+    background: url("../images/deleteAll-icon.png")no-repeat left center;
+    font-size: 14px;
+    color: #47b9a4;
+}
+.fd-a-delete:hover {
+    text-decoration: none;
+}
+.fd-ul-container {
+    height: 79.5%;
+    margin-top: 15px;
+}
+.fd-data-list {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 3.4%;
+    font: 14px/28px "microsoft yahei";
+    color: #000;
+}
+.fd-data-list>li {
+    padding-left: 9px;
+}
+.fd-data-list>li:hover {
+    background-color: #f2f2f2;
+}
+.fd-data-list >li:hover .fd-remove {
+    display: inline-block;
+}
+.fd-data-list >li:after{
+    display: block;
+    content: '';
+    visibility: hidden;
+    clear: both;
+}
+.fd-name {
+    display: inline-block;
+    width: 83%;
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    word-wrap: break-word;
+    vertical-align: middle;
+    color: #000;
+}
+.fd-name:hover {
+    text-decoration: none;
+    color: #000;
+}
+.fd-remove {
+    display: none;
+    margin-left: 5.1%;
+    width: 18px;
+    height: 18px;
+    line-height: 24px;
+    background: url("../images/remove-icon.png") no-repeat center;
+    vertical-align: middle;
+}
+/*当前罪名模块样式*/
 .fd-item-03 {
     margin-left: 1.3%;
+}
+.fd-title {
+    font: 16px/28px "microsoft yahei";
+    color: #000;
+}
+.fd-title a {
+    margin-right: 5px;
+    color: #47b9a4;
+    text-decoration: underline;
+}
+.fd-con-container {
+    box-sizing: border-box;
+    margin-top: 14px;
+    width: 100%;
+    padding: 19px 23px 20px;
+    background-color: #f7f7f7;
+}
+.fd-ul-data h6 {
+    font: 16px/28px "microsoft yahei";
+    color: #000;
+}
+.fd-checkbox-wrapper {
+    display: inline-block;
+    font: 14px/18px "microsoft yahei";
+    color: #999;
+    line-height: 20px;
+    margin-right: 20px;
+}
+.fd-ul-data >li {
+    margin-bottom: 21px;
+}
+/*多选框的样式*/
+input[type="checkbox"] {
+    display: none;
+}
+.fd-checkbox-label {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b1b1b1;
+    background-color: #fff;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fd-checkbox-label:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+input[type="checkbox"]:checked + .fd-checkbox-label {
+    background: url(../images/icon-tick.png) center center no-repeat;
 }
 .fd-bottom {
     position: absolute;
@@ -56,3 +208,10 @@
     height: 57px;
     background-color: #f7f7f7;
 }
+
+#ayTree {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 4%;
+}
+

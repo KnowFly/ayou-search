@@ -209,7 +209,7 @@
 				});
 				if ( current.length ) {
 					// TODO update the open/closed classes
-					var items = current.addClass("selected").parents("ul, li").add( current.next() ).show();
+					var items = current.addClass("").parents("ul, li").add( current.next() ).show();
 					if (settings.prerendered) {
 						// if prerendered is on, replicate the basic class swapping
 						items.filter("li")
