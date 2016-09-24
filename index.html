@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/common.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.treeview.css" media="all"/>
 </head>
 <body>
     <div class="fd-container">
@@ -13,6 +14,9 @@
         <div class="fd-main">
             <div class="fd-item-01">
                 <div class="fd-search"><input type="text"></div>
+                <div id="menuTree">
+
+                </div>
 
             </div>
             <div class="fd-item-02">
@@ -38,7 +42,143 @@
                 <div>当前罪名</div>
             </div>
         </div>
+        <!--<ul id="navigation">
+            <li>
+                <a>危害公共安全罪</a>
+                <ul>
+                    <li>
+                        <a>放火罪</a>
+                        <ul>
+                            <li>
+                                <a>决水罪</a>
+                                <ul>
+                                    <li><a>爆炸罪</a></li>
+                                    <li><a>投毒罪</a></li>
+                                    <li>
+                                        <a>失火罪</a>
+                                        <ul>
+                                            <li>
+                                                <a>过失爆炸罪</a>
+                                                <ul>
+                                                    <li><a>过失投毒罪</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>破坏交通工具罪</a>
+                                        <ul>
+                                            <li>
+                                                <a>破坏交通工具罪</a>
+                                                <ul>
+                                                    <li>资敌罪</li>
+                                                </ul>
+                                            </li>
+                                            <li><a>爆炸罪</a></li>
+                                            <li>
+                                                <a>破坏交通设施罪</a>
+                                                <ul>
+                                                    <li><a>破坏罪</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>-->
         <div class="fd-bottom"></div>
     </div>
 </body>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.treeview.edit.js"></script>
+<script src="js/jquery.treeview.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        var json = [
+            {
+                "name": "危害公共安全罪",
+                "list": [
+                    {
+                        "name": "决水罪",
+                        "url": "#a1"
+                    },
+                    {
+                        "name": "放火罪",
+                        "list": [
+                            {
+                                "name": "爆炸罪",
+                                "url": "#a11"
+                            },
+                            {
+                                "name": "投毒罪",
+                                "url":""
+                            },
+                            {
+                                "name": "过失投毒罪",
+                                "url": "#a13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "*b",
+                "list": [
+                    {
+                        "name": "**b",
+                        "url": "#b1"
+                    },
+                    {
+                        "name": "**bb",
+                        "list": [
+                            {
+                                "name": "****b",
+                                "url": "#b111"
+                            },
+                            {
+                                "name": "****bb",
+                                "url": "#b112"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        ]
+
+        var str = "<ul>";
+        var forTree = function(o){
+
+            for(var i=0;i<o.length;i++){
+                var urlstr;
+                try{
+                    if(typeof o[i]["url"] == "undefined"){
+                        urlstr = "<li><a>"+ o[i]["name"] +"</a><ul>";
+                    }else{
+                        urlstr = "<li><a href="+ o[i]["url"] +">"+ o[i]["name"] +"</a><ul>";
+                    }
+                    str += urlstr;
+                    if(o[i]["list"] != null){
+                        forTree(o[i]["list"]);
+                    }
+                    str += "</ul></li></ul>";
+                }catch(e){}
+            }
+            return str;
+        }
+
+        document.getElementById("menuTree").innerHTML = forTree(json);
+        $("#menuTree > ul").addClass("navigation")
+
+        $(".navigation").treeview({
+            persist: "location",
+            collapsed: true,
+            unique: true
+        });
+    });
+</script>
 </html>
