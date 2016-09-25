@@ -206,7 +206,7 @@ $(function () {
             var newa = "<a>"+_this.parent().find(".js-label").text()+"</a>";
             $(".fd-title> span").append(newa);
         } else {
-            
+
         }
     });
 });
